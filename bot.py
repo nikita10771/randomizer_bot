@@ -14,8 +14,7 @@ bot = telebot.TeleBot(API_TOKEN)
 @bot.message_handler(commands=['help', 'start'])
 def send_welcome(message):
     bot.reply_to(message, """\
-Здарова маленький ублюдыш, I am BotDvuhDolboebov and always be back.
-Я могу размазать тебя по стенке и разбить тебе ебальник!\
+Hello! This is a Randomaizer_bot from Rayon Gosling, he will help you choose random things.\
 """)
 
 
