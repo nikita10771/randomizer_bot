@@ -59,33 +59,30 @@ bot = telebot.TeleBot('6975514591:AAHoIVGVBW3nbLHGhjbBN1Q1-EYHohTB11c')
 def start(message):
 
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    btn1 = types.KeyboardButton("СПИСОК КОМАНД")
+    btn1 = types.KeyboardButton("Сommands")
     markup.add(btn1)
-    bot.send_message(message.from_user.id, '<b> 👋 Привет!Список команд в панели! </b> ', parse_mode='html', reply_markup=markup)
+    bot.send_message(message.from_user.id, '<b> 👋 Hello! List of commands in the panel! </b> ', parse_mode='html', reply_markup=markup)
 
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
 
-    if message.text == 'СПИСОК КОМАНД':
+    if message.text == 'Сommands':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True) #создание новых кнопок
-        btn1 = types.KeyboardButton('Как стать успешным?')
-        btn2 = types.KeyboardButton('Пустота')
-        btn3 = types.KeyboardButton('Правила использования')
+        btn1 = types.KeyboardButton('How to become successful?💵')
+        btn2 = types.KeyboardButton('Info🌐')
+        btn3 = types.KeyboardButton('Help📕')
         markup.add(btn1, btn2, btn3)
-        bot.send_message(message.from_user.id, '❓Выбери категорию❓', reply_markup=markup) #ответ бота
+        bot.send_message(message.from_user.id, '❓Select a category❓', reply_markup=markup) #ответ бота
 
 
-    elif message.text == 'Как стать успешным?':
-        bot.send_message(message.from_user.id, 'Надо купить курсы у меня в тг, мой ник - @Official_Snakeee')
+    elif message.text == 'How to become successful?💵':
+        bot.send_message(message.from_user.id, 'You need to buy courses from me in tg, my nickname - @Official_Snakeee')
 
-    elif message.text == 'Пустота':
-        bot.send_message(message.from_user.id, 'Здесь пока ничего нет.')
+    elif message.text == 'Info🌐':
+        bot.send_message(message.from_user.id, 'Do you want to change your life for the better? Do you want to be able to travel, buy beautiful things and provide for your family? You may not be able to afford it right now, but there are ways to make money. Dont be afraid to dream more, set a goal and take action! Dont wait for the opportunity to come by itself, go meet it. Strive for success, learn new things, develop your skills and move forward confidently. The path to making money may be difficult, but you can overcome all obstacles and achieve your goal. Remember that you deserve the best, and you will succeed!')
 
-    elif message.text == 'Правила использования':
-        bot.send_message(message.from_user.id, '1) Не быть пидором'
-                                               '2) Не быть гандоном'
-                                               '3) Не быть дотером')
-
+    elif message.text == 'Help📕':
+        bot.send_message(message.from_user.id, 'Support mail - platinum.academy.help@gmail.com')
 
 bot.polling(none_stop=True, interval=0) #обязательная для работы бота часть
 
