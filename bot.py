@@ -52,6 +52,7 @@
 
 import telebot
 from telebot import types
+import requests
 
 bot = telebot.TeleBot('6975514591:AAHoIVGVBW3nbLHGhjbBN1Q1-EYHohTB11c')
 
@@ -71,7 +72,8 @@ def get_text_messages(message):
         btn1 = types.KeyboardButton('How to become successful?💵')
         btn2 = types.KeyboardButton('Info🌐')
         btn3 = types.KeyboardButton('Help📕')
-        markup.add(btn1, btn2, btn3)
+        btn4 = types.KeyboardButton('Just a minute joke😂')
+        markup.add(btn1, btn2, btn3, btn4)
         bot.send_message(message.from_user.id, '❓Select a category❓', reply_markup=markup) #ответ бота
 
 
@@ -83,6 +85,18 @@ def get_text_messages(message):
 
     elif message.text == 'Help📕':
         bot.send_message(message.from_user.id, 'Support mail - platinum.academy.help@gmail.com')
+    elif message.text == 'Just a minute joke😂':
+
+        url = "https://v2.jokeapi.dev/joke/Programming"
+
+        data = requests.get(url).json()
+        if data['type'] == 'single':
+            bot.send_message(message.from_user.id, data['joke'])
+        else:
+            bot.send_message(message.from_user.id, data['setup'])
+            bot.send_message(message.from_user.id, data['delivery'])
+
+
 
 bot.polling(none_stop=True, interval=0) #обязательная для работы бота часть
 
