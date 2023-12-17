@@ -84,7 +84,7 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, 'Do you want to change your life for the better? Do you want to be able to travel, buy beautiful things and provide for your family? You may not be able to afford it right now, but there are ways to make money. Dont be afraid to dream more, set a goal and take action! Dont wait for the opportunity to come by itself, go meet it. Strive for success, learn new things, develop your skills and move forward confidently. The path to making money may be difficult, but you can overcome all obstacles and achieve your goal. Remember that you deserve the best, and you will succeed!')
 
     elif message.text == 'Help📕':
-        bot.send_message(message.from_user.id, 'Support mail - platinum.academy.help@gmail.com')
+        bot.send_message(message.from_user.id, 'Support mail - platinum.academy.help@gmail.com .Tg - https://t.me/Platinum_Academy_Support')
     elif message.text == 'Just a minute joke😂':
 
         url = "https://v2.jokeapi.dev/joke/Programming"
